@@ -1,0 +1,22 @@
+import random, sys
+
+secret_number = random.randrange(0,10)
+
+guesses = 0
+
+choice = int(input("Please input a guess"))
+while True:
+   if choice == 'exit':
+      sys.exit
+   elif guesses == 3:
+      print("You lose! the secret number was", secret_number)
+      break
+   elif choice < secret_number:
+      print("This guess is too low")
+      guesses += 1
+   elif choice > secret_number:
+      print("This guess is too high")
+      guesses += 1
+   elif choice == secret_number:
+      print("Congratulations, you win!")
+      break
